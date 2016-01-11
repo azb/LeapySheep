@@ -234,12 +234,14 @@
       <object>objects\MELT_obj_menu</object>
       <object>objects\MELT_control</object>
     </objects>
+    <object>objects\obj_shop_control</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
     <room>rooms\rm_game</room>
     <room>rooms\rm_lose</room>
     <room>rooms\rm_main</room>
+    <room>rooms\rm_sheep_shop</room>
   </rooms>
   <constants number="13">
     <constant name="PORTRAIT">1</constant>
