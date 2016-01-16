@@ -235,6 +235,8 @@
       <object>objects\MELT_control</object>
     </objects>
     <object>objects\obj_shop_control</object>
+    <object>objects\obj_test_shop_setup</object>
+    <object>objects\obj_test_sheep</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
