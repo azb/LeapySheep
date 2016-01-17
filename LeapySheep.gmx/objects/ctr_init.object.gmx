@@ -29,11 +29,11 @@
 
 global.ROOM_SPEED = room_speed;  //Global room speed
 
-global.SPLASH_SCREEN = OFF;       //Splash screen (client branding) on/off
+global.SPLASH_SCREEN = 0 //OFF;       //Splash screen (client branding) on/off
 global.SPLASH_SCREEN_SECONDS = 3;//Seconds to show splash screen
 
-global.OPT_MUSIC = ON;           //Default music on/off
-global.OPT_SOUND = ON;           //Default sound on/off
+global.OPT_MUSIC = 1//ON;           //Default music on/off
+global.OPT_SOUND = 1//ON;           //Default sound on/off
 </string>
           </argument>
         </arguments>

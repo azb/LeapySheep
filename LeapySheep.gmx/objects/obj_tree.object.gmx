@@ -25,8 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>vspeed = 16
-
+            <string>//vspeed = 16
+//
 </string>
           </argument>
         </arguments>
@@ -50,6 +50,7 @@
           <argument>
             <kind>1</kind>
             <string>depth = -y
+/*
 if y &gt; room_height + 128
 y = -128
 </string>
