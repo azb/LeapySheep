@@ -85,7 +85,7 @@ vwp = view_wport[0];
 vhp = view_hport[0];
 
 // SCREEN ROTATION
-desired_rotation = game_height &gt; game_width;   //OR manually choose LANDSCAPE / PORTRAIT constants
+desired_rotation = PORTRAIT //game_height &gt; game_width;   //OR manually choose LANDSCAPE / PORTRAIT constants
 actual_rotation = 0;
 is_wrong_rotation = false;  //If the screen is the wrong rotation
 turn_angle = 0;             //This is used for the 'please rotate' message

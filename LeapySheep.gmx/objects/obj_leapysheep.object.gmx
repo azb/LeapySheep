@@ -26,6 +26,16 @@
           <argument>
             <kind>1</kind>
             <string>sprite_index = global.skin
+
+scr_touch_controls_init()
+
+jx_start = -1
+
+held_time = 0
+
+zspeed = 0
+
+z = 0
 </string>
           </argument>
         </arguments>
@@ -48,7 +58,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>score++
+            <string>//score++
 if keyboard_check(vk_up)
     {
     y-=32
@@ -65,7 +75,7 @@ if keyboard_check(vk_right)
     {
     x+=32
     }
-
+/*
 if mouse_check_button(1)
     {
     
@@ -80,8 +90,40 @@ if mouse_check_button(1)
         x += 32
         }
     }
-    
+*/
+
+
+//if x &lt; 16 x  = 16
+//if x &gt; room_width - 16 x  = room_width - 16
+
 depth = -y
+
+view_follow()
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_flower">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>with other
+instance_destroy()
+score++
 </string>
           </argument>
         </arguments>
@@ -128,12 +170,81 @@ depth = -y
           <argument>
             <kind>1</kind>
             <string>
-draw_self()
+draw_sprite_ext(sprite_index,-1,x,y+15,1,1,image_angle,c_black,.4)
+draw_sprite_ext(sprite_index,-1,x,y-z,1,1,image_angle,c_white,1)
+//draw_self()
+
+
 draw_set_font(fnt_losescreen)
 draw_set_halign(fa_left)
 draw_set_valign(fa_top)
-draw_text(24,24,"Score: "+string(score))
 
+draw_set_color(c_dkgray)
+draw_rectangle(view_xview[0],view_yview[0],view_xview[0]+view_wview[0],view_yview[0]+96,0)
+//draw_circle(view_xview[0] + 48,view_yview[0] + 32 , 68 , 0)
+draw_set_color(c_white)
+draw_sprite(spr_flower,0,view_xview[0] + 24,view_yview[0] + 24 + 48)
+draw_text(view_xview[0] + 24 + 48,view_yview[0] + 6,string(score))
+
+scr_mouse_device_handling()
+
+//joystick_radius = 128
+
+if mouse_check_button_pressed(1)
+    {
+    jx_start = mouse_x - view_xview[0]
+    jy_start = mouse_y - view_yview[0]
+    vx_start = view_xview[0]
+    vy_start = view_yview[0]
+    held_time = 0
+    }
+    
+if mouse_check_button(1)
+    {
+    held_time++
+    }
+    
+if speed = 0
+if mouse_check_button_released(1)
+    {
+    jx_start = -1
+    if held_time &lt; 5
+        {
+        //motion_add(image_angle , 60)
+        //friction = 5
+        zspeed = 25
+        }
+    }
+    
+z += zspeed
+
+if z &gt; 0
+    {
+    speed = 25
+    direction = image_angle
+    zspeed -= 7
+    }
+else
+    {
+    speed = 0
+    z = 0
+    zspeed = 0
+    }
+
+if jx_start != -1
+    {
+    scr_touch_joystick(jx_start , jy_start , 128 , 1)
+    //if point_distance(jx_start , jy_start , mouse_x - view_xview[0] , mouse_y - view_yview[0] ) &gt; 2
+    if point_distance(jx , jy , 0 , 0 ) &gt; .1
+        {
+        x += jx * 32
+        y += jy * 32
+        image_angle = point_direction(0,0,jx,jy)
+        image_speed = .4
+        }
+    }
+else
+    image_speed = 0
 </string>
           </argument>
         </arguments>

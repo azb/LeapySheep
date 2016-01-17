@@ -51,6 +51,7 @@
     <sprite>sprites\spr_leapysheep</sprite>
     <sprite>sprites\spr_turtle</sprite>
     <sprite>sprites\spr_tree</sprite>
+    <sprite>sprites\spr_flower</sprite>
     <sprite>sprites\spr_ufo</sprite>
     <sprites name="MELT SPRITES">
       <sprite>sprites\spr_button_orange</sprite>
@@ -209,6 +210,11 @@
         <script>scripts\MELT_string_to_variable_name.gml</script>
       </scripts>
     </scripts>
+    <script>scripts\scr_touch_joystick.gml</script>
+    <script>scripts\scr_touch_controls_init.gml</script>
+    <script>scripts\scr_mouse_device_handling.gml</script>
+    <script>scripts\adjust.gml</script>
+    <script>scripts\view_follow.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_default</font>
@@ -227,6 +233,7 @@
     <object>objects\shared_Tweener</object>
     <object>objects\obj_tree</object>
     <object>objects\obj_ufo</object>
+    <object>objects\obj_flower</object>
     <object>objects\obj_lose</object>
     <object>objects\obj_leapysheep</object>
     <objects name="MELT OBJECTS">
@@ -239,27 +246,12 @@
     <object>objects\obj_test_sheep</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_sheep_shop</room>
     <room>rooms\rm_init</room>
     <room>rooms\rm_game</room>
     <room>rooms\rm_lose</room>
     <room>rooms\rm_main</room>
-    <room>rooms\rm_sheep_shop</room>
   </rooms>
-  <constants number="13">
-    <constant name="PORTRAIT">1</constant>
-    <constant name="LANDSCAPE">0</constant>
-    <constant name="SCREEN_FULL">0</constant>
-    <constant name="SCREEN_FIT">1</constant>
-    <constant name="SCREEN_FILL">2</constant>
-    <constant name="SCREEN_FIX">3</constant>
-    <constant name="SCREEN_FLEX">4</constant>
-    <constant name="NO">0</constant>
-    <constant name="YES">1</constant>
-    <constant name="OFF">0</constant>
-    <constant name="ON">1</constant>
-    <constant name="GM_build_date">41961.0125211806</constant>
-    <constant name="GM_version">'101'</constant>
-  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>

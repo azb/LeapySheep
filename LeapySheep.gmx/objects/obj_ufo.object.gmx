@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>vspeed = 16
+            <string>//vspeed = 16
 
 if x &gt; room_width / 2
 hspeed = -9
