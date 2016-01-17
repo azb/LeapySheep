@@ -84,7 +84,9 @@ if mouse_y &gt;= swipe_window_y1 and mouse_y &lt;= swipe_window_y2 {
                     if sheep_count &gt; SHEEP_MAX {
                         sheep_count = SHEEP_MIN
                     }
-                    view_object[0] = instance_find(obj_test_sheep,sheep_count)
+                    if instance_exists(obj_test_garden_setup) {
+                        view_object[0] = global.sheep[sheep_count-1]
+                    }
                 }
                 else if mouse_x &lt; touch_point_x - 64 {
                     swipe_direction = -1
@@ -92,7 +94,9 @@ if mouse_y &gt;= swipe_window_y1 and mouse_y &lt;= swipe_window_y2 {
                     if sheep_count &lt; SHEEP_MIN {
                         sheep_count = SHEEP_MAX
                     }
-                    view_object[0] = instance_find(obj_test_sheep,sheep_count)
+                    if instance_exists(obj_test_garden_setup) {
+                        view_object[0] = global.sheep[sheep_count-1]
+                    }
                 }
             }
             is_touching = 0
@@ -162,7 +166,10 @@ draw_text( mouse_x, mouse_y,
     "#Is Touching: " + string(is_touching) + 
     "#Is Swiping: " + string(is_swiping) + 
     "#Swipe Timer: " + string(swipe_trigger_time) + 
-    "#Swipe Direction: " + string(swipe_direction)
+    "#Swipe Direction: " + string(swipe_direction) +
+    "#Sheep MIN: " + string(SHEEP_MIN) +
+    "#Sheep Max: " + string(SHEEP_MAX) +
+    "#Sheep Array Length: " + string(array_length_1d(global.sheep))
 )
 
 </string>
