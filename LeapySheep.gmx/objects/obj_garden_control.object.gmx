@@ -136,8 +136,8 @@ swipe_window_center_y = (swipe_window_y2 - swipe_window_y1) /2 + swipe_window_y1
 
 if view_target &gt; -1
 {
-view_target_x=view_target.x-view_wview[0]/2
-view_target_y=view_target.y-view_hview[0]/2
+view_target_x = view_target.x - view_wview[0]/2
+view_target_y = view_target.y - view_hview[0]/2
 }
 
 view_xview[0] = (view_target_x + view_xview[0] ) / 2
