@@ -29,7 +29,7 @@
 
 
 for (i=0;i&lt;10;i++) {
-    global.sheep[i] = instance_create(random(room_width),random(room_height),obj_test_garden_sheep)
+    global.sheep[i] = instance_create(50 + random(room_width - 100), 50 + random(room_height - 100),obj_test_garden_sheep)
     global.sheep[i].sheep_id = i + 1
 }
 
@@ -39,7 +39,7 @@ if instance_exists(obj_test_garden_sheep) {
     view_object[0] = global.sheep[0]
 }
 
-obj_shop_control.SHEEP_MAX = instance_number(obj_test_garden_sheep)
+obj_garden_control.SHEEP_MAX = instance_number(obj_test_garden_sheep)
 
 
 </string>

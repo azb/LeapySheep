@@ -241,6 +241,7 @@
       <object>objects\MELT_obj_menu</object>
       <object>objects\MELT_control</object>
     </objects>
+    <object>objects\obj_garden_control</object>
     <object>objects\obj_shop_control</object>
     <object>objects\obj_test_garden_setup</object>
     <object>objects\obj_test_garden_sheep</object>

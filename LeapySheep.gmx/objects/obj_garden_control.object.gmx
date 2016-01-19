@@ -83,18 +83,11 @@ if mouse_y &gt;= swipe_window_y1 and mouse_y &lt;= swipe_window_y2 {
             if is_swiping {
                 if mouse_x &gt; touch_point_x + 64 {
                     swipe_direction = 1
-                    if instance_exists(obj_test_shop_setup) {
-                        if instance_nearest(swipe_window_center_x,swipe_window_y,obj_test_shop_sheep) {
-                            sheep_count = global.sheep[sheep_count].sheep_id
-                            global.sheep[sheep_count].x = swipe_window_center_x
-                            global.sheep[sheep_count].y = swipe_window_center_y
-                        }
+                    sheep_count = sheep_count + swipe_direction
+                    if sheep_count &gt; SHEEP_MAX {
+                        sheep_count = SHEEP_MIN
                     }
                     if instance_exists(obj_test_garden_setup) {
-                        sheep_count = sheep_count + swipe_direction
-                        if sheep_count &gt; SHEEP_MAX {
-                            sheep_count = SHEEP_MIN
-                        }
                         view_object[0] = global.sheep[sheep_count-1]
                     }
                 }
@@ -104,10 +97,7 @@ if mouse_y &gt;= swipe_window_y1 and mouse_y &lt;= swipe_window_y2 {
                     if sheep_count &lt; SHEEP_MIN {
                         sheep_count = SHEEP_MAX
                     }
-                    if instance_exists(obj_test_shop_setup) {
-                        
-                    }
-                    else if instance_exists(obj_test_garden_setup) {
+                    if instance_exists(obj_test_garden_setup) {
                         view_object[0] = global.sheep[sheep_count-1]
                     }
                 }
@@ -127,16 +117,12 @@ if mouse_y &gt;= swipe_window_y1 and mouse_y &lt;= swipe_window_y2 {
             if swipe_trigger_time &lt;= 0 {
                 is_swiping = 1
             }
-            if is_swiping {
-                global.sheep[sheep_count].x = global.sheep[sheep_count].x + (mouse_x + touch_point_x)
-            }
             else if !is_swiping {
                 swipe_trigger_time--
             }
         }
     }
 }
-
 
 swipe_window_x1 = view_xview[0] + 10
 swipe_window_x2 = view_xview[0] + view_wview[0] - 10

@@ -7,7 +7,46 @@
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
-  <events/>
+  <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//
+
+
+for (i=0;i&lt;10;i++) {
+    global.sheep[i] = instance_create(swipe_window_center_x,swipe_window_center_y,obj_test_shop_sheep)
+    global.sheep[i].sheep_id = i + 1
+    //global.sheep[i].visible = 1
+}
+
+view_enabled = false
+view_visible[0] = true
+
+
+obj_shop_control.SHEEP_MAX = instance_number(obj_test_shop_sheep)
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+  </events>
   <PhysicsObject>0</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>0</PhysicsObjectShape>
