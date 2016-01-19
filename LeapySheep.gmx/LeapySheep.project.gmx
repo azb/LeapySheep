@@ -249,12 +249,12 @@
     <object>objects\obj_test_shop_sheep</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_sheep_garden</room>
     <room>rooms\rm_init</room>
     <room>rooms\rm_game</room>
     <room>rooms\rm_lose</room>
     <room>rooms\rm_main</room>
     <room>rooms\rm_sheep_shop</room>
-    <room>rooms\rm_sheep_garden</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

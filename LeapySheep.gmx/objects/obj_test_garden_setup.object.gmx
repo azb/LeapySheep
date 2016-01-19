@@ -36,7 +36,8 @@ for (i=0;i&lt;10;i++) {
 view_enabled = true
 view_visible[0] = true
 if instance_exists(obj_test_garden_sheep) {
-    view_object[0] = global.sheep[0]
+    //view_object[0] = global.sheep[0]
+    obj_garden_control.view_target = global.sheep[0]
 }
 
 obj_garden_control.SHEEP_MAX = instance_number(obj_test_garden_sheep)

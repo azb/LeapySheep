@@ -44,7 +44,6 @@ is_swiping = 0
 swipe_direction = 0
 
 
-
 swipe_window_x1 = view_xview[0]
 swipe_window_x2 = view_xview[0] + view_wview[0]
 swipe_window_y1 = view_yview[0]
@@ -52,8 +51,10 @@ swipe_window_y2 = view_yview[0] + view_hview[0]
 swipe_window_center_x = (swipe_window_x2 - swipe_window_x1) /2 + swipe_window_x1
 swipe_window_center_y = (swipe_window_y2 - swipe_window_y1) /2 + swipe_window_y1
 
+view_target_x = view_xview[0]
+view_target_y = view_yview[0]
 
-
+view_target = -1
 </string>
           </argument>
         </arguments>
@@ -88,7 +89,7 @@ if mouse_y &gt;= swipe_window_y1 and mouse_y &lt;= swipe_window_y2 {
                         sheep_count = SHEEP_MIN
                     }
                     if instance_exists(obj_test_garden_setup) {
-                        view_object[0] = global.sheep[sheep_count-1]
+                        view_target = global.sheep[sheep_count-1]
                     }
                 }
                 else if mouse_x &lt; touch_point_x - 64 {
@@ -98,7 +99,7 @@ if mouse_y &gt;= swipe_window_y1 and mouse_y &lt;= swipe_window_y2 {
                         sheep_count = SHEEP_MAX
                     }
                     if instance_exists(obj_test_garden_setup) {
-                        view_object[0] = global.sheep[sheep_count-1]
+                        view_target = global.sheep[sheep_count-1]
                     }
                 }
             }
@@ -124,12 +125,25 @@ if mouse_y &gt;= swipe_window_y1 and mouse_y &lt;= swipe_window_y2 {
     }
 }
 
+//view_object[0..7]
+
 swipe_window_x1 = view_xview[0] + 10
 swipe_window_x2 = view_xview[0] + view_wview[0] - 10
 swipe_window_y1 = view_yview[0] + 10
 swipe_window_y2 = view_yview[0] + view_hview[0] - 10
 swipe_window_center_x = (swipe_window_x2 - swipe_window_x1) /2 + swipe_window_x1
 swipe_window_center_y = (swipe_window_y2 - swipe_window_y1) /2 + swipe_window_y1
+
+if view_target &gt; -1
+{
+view_target_x=view_target.x-view_wview[0]/2
+view_target_y=view_target.y-view_hview[0]/2
+}
+
+view_xview[0] = (view_target_x + view_xview[0] ) / 2
+view_yview[0] = (view_target_y + view_yview[0] ) / 2
+
+
 </string>
           </argument>
         </arguments>
