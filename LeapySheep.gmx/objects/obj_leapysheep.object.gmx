@@ -36,6 +36,13 @@ held_time = 0
 zspeed = 0
 
 z = 0
+
+taps = 0
+
+jetpack_on = 0
+
+time_since_last_click = 0
+    
 </string>
           </argument>
         </arguments>
@@ -58,7 +65,10 @@ z = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//score++
+            <string>if x &gt; room_width x = room_width
+if x &lt; 0 x = 0
+
+//score++
 if keyboard_check(vk_up)
     {
     y-=32
@@ -99,6 +109,39 @@ if mouse_check_button(1)
 depth = -y
 
 view_follow()
+/*
+repeat(64)
+if collision_circle(x,y,sprite_width/2,obj_fence,0,1)
+{
+nf = instance_nearest(x,y,obj_fence)
+if nf.x &gt; x x--
+if nf.x &lt; x x++
+if nf.y &gt; y y--
+if nf.y &lt; y y++
+}*/
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_alien">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>room = rm_lose
 </string>
           </argument>
         </arguments>
@@ -146,7 +189,8 @@ score++
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room = rm_lose
+            <string>if !collision_circle(x,y,64,obj_tree,1,1)
+room = rm_lose
 </string>
           </argument>
         </arguments>
@@ -171,9 +215,13 @@ score++
             <kind>1</kind>
             <string>
 draw_sprite_ext(sprite_index,-1,x,y+15,1,1,image_angle,c_black,.4)
-draw_sprite_ext(sprite_index,-1,x,y-z,1,1,image_angle,c_white,1)
-//draw_self()
+draw_sprite_ext(spr_rocket_pack,jetpack_on+1,x,y+15,1,1,image_angle,c_black,.4)
 
+draw_sprite_ext(sprite_index,-1,x,y-z,1,1,image_angle,c_white,1)
+
+draw_sprite_ext(spr_rocket_pack,jetpack_on+1,x,y-z,1,1,image_angle,c_white,1)
+
+//draw_self()
 
 draw_set_font(fnt_losescreen)
 draw_set_halign(fa_left)
@@ -190,6 +238,8 @@ scr_mouse_device_handling()
 
 //joystick_radius = 128
 
+time_since_last_click++
+
 if mouse_check_button_pressed(1)
     {
     jx_start = mouse_x - view_xview[0]
@@ -197,16 +247,24 @@ if mouse_check_button_pressed(1)
     vx_start = view_xview[0]
     vy_start = view_yview[0]
     held_time = 0
+    if time_since_last_click &lt;= 7
+        {
+        jetpack_on = !jetpack_on
+        taps = 0
+        }
+    time_since_last_click = 0
     }
     
 if mouse_check_button(1)
     {
     held_time++
     }
-    
+
+if mouse_y &gt; view_yview[0] + 96
 if speed = 0
 if mouse_check_button_released(1)
     {
+    taps++
     jx_start = -1
     if held_time &lt; 5
         {
@@ -215,10 +273,23 @@ if mouse_check_button_released(1)
         zspeed = 25
         }
     }
-    
+
+if held_time &gt; 15 || held_time = 0
+    taps = 0
+
 z += zspeed
 
-if z &gt; 0
+if jetpack_on
+    {
+    ne = instance_create(x,y-z,obj_rocket_exaugst)
+    ne.direction = image_angle + 180
+    ne.speed = irandom(10) + 10
+    ne.image_angle = image_angle
+    x += lengthdir_x(32,image_angle)
+    y += lengthdir_y(32,image_angle)
+    }
+
+if z &gt; 0 + (jetpack_on * 96)
     {
     speed = 25
     direction = image_angle
@@ -227,7 +298,7 @@ if z &gt; 0
 else
     {
     speed = 0
-    z = 0
+    z = 0 + (jetpack_on * 96)
     zspeed = 0
     }
 
@@ -237,14 +308,29 @@ if jx_start != -1
     //if point_distance(jx_start , jy_start , mouse_x - view_xview[0] , mouse_y - view_yview[0] ) &gt; 2
     if point_distance(jx , jy , 0 , 0 ) &gt; .1
         {
-        x += jx * 32
-        y += jy * 32
+        ok = 1
+        dir1 = point_direction(0,0,jx,jy)
+        
+        x1 = x + lengthdir_x(sprite_width/2,dir1)
+        y1 = y + lengthdir_y(sprite_width/2,dir1)
+        
+        if collision_circle(x1,y1,10,obj_fence,1,1)
+            ok = 0
+        if z &gt; 0 ok = 1
+        if ok if !jetpack_on
+            {
+            x += jx * 32
+            y += jy * 32
+            }
         image_angle = point_direction(0,0,jx,jy)
         image_speed = .4
         }
     }
 else
+    {
     image_speed = 0
+    }
+
 </string>
           </argument>
         </arguments>

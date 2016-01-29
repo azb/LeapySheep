@@ -31,6 +31,8 @@ if x &gt; room_width / 2
 hspeed = -9
 else
 hspeed = 9
+
+scandir = 0
 </string>
           </argument>
         </arguments>
@@ -53,16 +55,45 @@ hspeed = 9
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>depth = -y
-if y &gt; room_height + 128
+            <string>scandir += 2
+
+depth = -y
+if y &gt; view_yview[0] + view_hview[0] //room_height + 128
     {
     x = irandom(room_width)
-    y = -128
-    if x &gt; room_width / 2
-        hspeed = - ( 9 + irandom(5) )
-    else
-        hspeed =  ( 9 + irandom(5) )
+    y = view_yview[0]-128
     }
+    
+
+    if x &gt; room_width
+        hspeed = - ( 9 + irandom(5) )
+    if x &lt; 0
+        hspeed =  ( 9 + irandom(5) )
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_sprite_ext(spr_ufo_scan,0,x,y,3,1,scandir,c_white,1)
+draw_self()
+
 </string>
           </argument>
         </arguments>

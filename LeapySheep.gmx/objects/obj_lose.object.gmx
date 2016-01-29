@@ -72,7 +72,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_font(fnt_losescreen)
+            <string>
+
+draw_set_font(fnt_losescreen)
 
 draw_set_halign(fa_center)
 draw_set_valign(fa_center)
@@ -96,15 +98,16 @@ draw_text(room_width/2,room_height/2,"You Lose##Final Score: "+string(score)+"##
 //DRAW EVENT CODE
 //put this code in the draw event of your interface drawing object
 
+/*
 if global.skin != spr_turtle
 if MELT_drawButton(304,928,464,128,'Buy Turtle')
     {
     //Code for what should happen when you press this 'Buy Turtle' button goes here
     global.skin = spr_turtle    
     }
+*/
 
-
-if MELT_drawButton(1616,944,464,128,'Try Again') || keyboard_check(vk_enter)
+if (mouse_check_button_pressed(1) &amp;&amp; alarm[0] &lt;= 0) //MELT_drawButton(1616,944,464,128,'Try Again') || keyboard_check(vk_enter) ||
     {
     //Code for what should happen when you press this 'Try Again' button goes here
     room = rm_game

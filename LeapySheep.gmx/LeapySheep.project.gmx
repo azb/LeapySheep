@@ -49,9 +49,14 @@
       </sprites>
     </sprites>
     <sprite>sprites\spr_leapysheep</sprite>
+    <sprite>sprites\spr_rocket_pack</sprite>
     <sprite>sprites\spr_turtle</sprite>
     <sprite>sprites\spr_tree</sprite>
     <sprite>sprites\spr_flower</sprite>
+    <sprite>sprites\spr_fence</sprite>
+    <sprite>sprites\spr_ufo_scan</sprite>
+    <sprite>sprites\spr_bushes</sprite>
+    <sprite>sprites\spr_rocket_exaugst</sprite>
     <sprite>sprites\spr_ufo</sprite>
     <sprites name="MELT SPRITES">
       <sprite>sprites\spr_button_orange</sprite>
@@ -64,6 +69,7 @@
       <sprite>sprites\spr_tab</sprite>
       <sprite>sprites\MELT_spr_settings_icons</sprite>
     </sprites>
+    <sprite>sprites\spr_alien</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_welcome</background>
@@ -72,6 +78,7 @@
     <backgrounds name="MELT BACKGROUNDS">
       <background>background\back_gradient</background>
     </backgrounds>
+    <background>background\back_bush</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -242,17 +249,20 @@
       <object>objects\MELT_control</object>
     </objects>
     <object>objects\obj_garden_control</object>
+    <object>objects\obj_fence</object>
     <object>objects\obj_shop_control</object>
+    <object>objects\obj_alien</object>
     <object>objects\obj_test_garden_setup</object>
+    <object>objects\obj_rocket_exaugst</object>
     <object>objects\obj_test_garden_sheep</object>
     <object>objects\obj_test_shop_setup</object>
     <object>objects\obj_test_shop_sheep</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_sheep_garden</room>
     <room>rooms\rm_init</room>
     <room>rooms\rm_game</room>
     <room>rooms\rm_lose</room>
+    <room>rooms\rm_sheep_garden</room>
     <room>rooms\rm_main</room>
     <room>rooms\rm_sheep_shop</room>
   </rooms>
