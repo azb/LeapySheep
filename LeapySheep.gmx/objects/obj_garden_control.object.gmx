@@ -177,7 +177,10 @@ if is_swiping {
     draw_circle_colour(mouse_x,mouse_y,32, c_black, c_white, 1)
 }
 
+
+
 // debugging
+/*
 draw_text( mouse_x, mouse_y, 
     "Touch Point: " + string(touch_point_x) + " " + string(touch_point_y) + 
     "#Is Touching: " + string(is_touching) + 

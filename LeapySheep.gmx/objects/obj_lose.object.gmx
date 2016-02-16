@@ -26,7 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>alarm[0] = 30
-
+global.highest_score = 0
+tab = 0
 </string>
           </argument>
         </arguments>
@@ -73,7 +74,8 @@
           <argument>
             <kind>1</kind>
             <string>
-
+if tab = 0
+{
 draw_set_font(fnt_losescreen)
 
 draw_set_halign(fa_center)
@@ -81,19 +83,56 @@ draw_set_valign(fa_center)
 
 if alarm[0] &lt;= 0
 {
-tstr = "Tap to restart"
+if MELT_drawButton(540,1824-160,936,144,'Main Menu')
+    {
+    room = rm_main_menu
+    }
+if MELT_drawButton(540,1824-160-180,936,144,'High Score')
+    {
+    tab = 1
+    }
+if MELT_drawButton(540,1824-160-180*2,936,144,'Try Again')
+    {
+    score = 0
+    room = rm_game
+    }
+//tstr = "Tap to restart"
+/*
 if mouse_check_button(1) &amp;&amp; !instance_exists(MELT_control)
     {
     room = rm_game
     score = 0
     }
+if global.js &gt; 0
+    {
+    if joystick_check_button(1,1)
+        {
+        room = rm_game
+        score = 0
+        }
+    }*/
 }
-else
-tstr = ""
+//else
+//tstr = ""
+if score &gt; global.highest_score
+global.highest_score = score
 
-draw_text(room_width/2,room_height/2,"You Lose##Final Score: "+string(score)+"##"+tstr)
+draw_set_color(c_white)
+draw_text(room_width/2,room_height/2,"You Lose##Final Score: "+string(score))
+}
 
+if tab = 1
+{
+draw_set_color(c_white)
+draw_set_font(fnt_losescreen)
 
+draw_text(room_width/2,room_height/2,"High Score: "+string(global.highest_score))
+
+if MELT_drawButton(540,1824-160,936,144,'Back')
+    {
+    tab = 0
+    }
+}
 
 //DRAW EVENT CODE
 //put this code in the draw event of your interface drawing object
@@ -106,7 +145,7 @@ if MELT_drawButton(304,928,464,128,'Buy Turtle')
     global.skin = spr_turtle    
     }
 */
-
+/*
 if (mouse_check_button_pressed(1) &amp;&amp; alarm[0] &lt;= 0) //MELT_drawButton(1616,944,464,128,'Try Again') || keyboard_check(vk_enter) ||
     {
     //Code for what should happen when you press this 'Try Again' button goes here

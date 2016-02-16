@@ -76,10 +76,18 @@ image_speed = 0
           <argument>
             <kind>1</kind>
             <string>depth = -y
-if y &gt; room_height + 128
+if y &gt; view_yview[0] + view_hview[0] + 128
     {
-    y = -128
+    y = view_yview[0]-128
     }
+    
+/*
+if y &gt; view_yview[0] + view_hview[0] //room_height + 128
+    {
+    x = irandom(room_width)
+    y = view_yview[0]-128
+    }
+
 </string>
           </argument>
         </arguments>

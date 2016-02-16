@@ -104,7 +104,7 @@ x = game_width; y = game_height;
 
 //Set alarms
 alarm[0] = 1;                               //This alarm re-sizes the screen
-if (global.DEVICE_IS_TOUCH)alarm[1] = 1;    //This alarm hides the address bar
+if (global.DEVICE_IS_TOUCH) alarm[1] = 1;    //This alarm hides the address bar
 
 //Reset screen size on room change
 room_change_reset = YES;  

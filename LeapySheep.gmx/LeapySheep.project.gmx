@@ -27,7 +27,14 @@
     <extension index="1">extensions\TweenGMS</extension>
     <extension index="2">extensions\MELT</extension>
   </NewExtensions>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_baa01</sound>
+    <sound>sound\snd_baa006</sound>
+    <sound>sound\snd_jump</sound>
+    <sound>sound\snd_music</sound>
+    <sound>sound\snd_music2</sound>
+    <sound>sound\snd_eat_plant</sound>
+  </sounds>
   <sprites name="sprites">
     <sprites name="JCHTML5">
       <sprite>sprites\spr_touch_event</sprite>
@@ -49,8 +56,11 @@
       </sprites>
     </sprites>
     <sprite>sprites\spr_leapysheep</sprite>
+    <sprite>sprites\spr_leapy_sheep_old</sprite>
+    <sprite>sprites\spr_leapy_sheep_dark</sprite>
     <sprite>sprites\spr_rocket_pack</sprite>
     <sprite>sprites\spr_turtle</sprite>
+    <sprite>sprites\spr_bunny</sprite>
     <sprite>sprites\spr_tree</sprite>
     <sprite>sprites\spr_flower</sprite>
     <sprite>sprites\spr_fence</sprite>
@@ -75,10 +85,13 @@
     <background>background\bg_welcome</background>
     <background>background\bg_rotate_background</background>
     <background>background\back_ground</background>
+    <background>background\back_grass2</background>
+    <background>background\back_ground_dark</background>
     <backgrounds name="MELT BACKGROUNDS">
       <background>background\back_gradient</background>
     </backgrounds>
     <background>background\back_bush</background>
+    <background>background\back_bush_dark</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -222,6 +235,8 @@
     <script>scripts\scr_mouse_device_handling.gml</script>
     <script>scripts\adjust.gml</script>
     <script>scripts\view_follow.gml</script>
+    <script>scripts\scr_game_end.gml</script>
+    <script>scripts\scr_add_skin.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_default</font>
@@ -240,7 +255,10 @@
     <object>objects\shared_Tweener</object>
     <object>objects\obj_tree</object>
     <object>objects\obj_ufo</object>
+    <object>objects\obj_main_menu</object>
     <object>objects\obj_flower</object>
+    <object>objects\obj_hud</object>
+    <object>objects\obj_skin_select</object>
     <object>objects\obj_lose</object>
     <object>objects\obj_leapysheep</object>
     <objects name="MELT OBJECTS">
@@ -260,11 +278,13 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
+    <room>rooms\rm_main_menu</room>
+    <room>rooms\rm_skin_select_temp</room>
     <room>rooms\rm_game</room>
     <room>rooms\rm_lose</room>
     <room>rooms\rm_sheep_garden</room>
-    <room>rooms\rm_main</room>
     <room>rooms\rm_sheep_shop</room>
+    <room>rooms\rm_main</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

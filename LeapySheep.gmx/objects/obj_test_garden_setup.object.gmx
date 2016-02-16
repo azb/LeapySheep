@@ -29,7 +29,7 @@
 
 
 for (i=0;i&lt;10;i++) {
-    global.sheep[i] = instance_create(50 + random(room_width - 100), 50 + random(room_height - 100),obj_test_garden_sheep)
+    global.sheep[i] = instance_create(i * 256,128,obj_test_garden_sheep) //50 + random(room_width - 100), 50 + random(room_height - 100)
     global.sheep[i].sheep_id = i + 1
 }
 
