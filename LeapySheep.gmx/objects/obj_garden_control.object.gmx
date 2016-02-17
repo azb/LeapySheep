@@ -77,7 +77,7 @@ view_target = -1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//
+            <string>//Code for "Swiping" input
 if mouse_y &gt;= swipe_window_y1 and mouse_y &lt;= swipe_window_y2 {
     if mouse_x &gt;= swipe_window_x1 and mouse_x &lt;= swipe_window_x2 {
         if mouse_check_button_released(mb_left) {
@@ -177,10 +177,7 @@ if is_swiping {
     draw_circle_colour(mouse_x,mouse_y,32, c_black, c_white, 1)
 }
 
-
-
 // debugging
-/*
 draw_text( mouse_x, mouse_y, 
     "Touch Point: " + string(touch_point_x) + " " + string(touch_point_y) + 
     "#Is Touching: " + string(is_touching) + 
