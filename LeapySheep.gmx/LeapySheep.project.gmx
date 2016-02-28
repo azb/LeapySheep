@@ -89,6 +89,15 @@
       <sprite>sprites\spr_Fence_horizontal_NoTexture_01</sprite>
       <sprite>sprites\spr_Fence_vertical_NoTexture_01</sprite>
     </sprites>
+    <sprites name="Characters">
+      <sprite>sprites\spr_Sheep01_N</sprite>
+      <sprite>sprites\spr_Sheep01_NE</sprite>
+      <sprite>sprites\spr_Sheep01_E</sprite>
+      <sprite>sprites\spr_Sheep01_SE</sprite>
+      <sprite>sprites\spr_Sheep01_S</sprite>
+      <sprite>sprites\spr_Sheep01_SW</sprite>
+      <sprite>sprites\spr_Sheep01_W</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_welcome</background>
