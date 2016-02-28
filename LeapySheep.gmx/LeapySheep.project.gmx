@@ -81,6 +81,14 @@
     </sprites>
     <sprite>sprites\spr_alien</sprite>
     <sprite>sprites\spr_new_sheep</sprite>
+    <sprites name="Garden">
+      <sprite>sprites\spr_Barn</sprite>
+      <sprite>sprites\spr_Bush</sprite>
+      <sprite>sprites\spr_ElectricFence_horizontal_01_v01</sprite>
+      <sprite>sprites\spr_ElectricFence_vertical_01_v01</sprite>
+      <sprite>sprites\spr_Fence_horizontal_NoTexture_01</sprite>
+      <sprite>sprites\spr_Fence_vertical_NoTexture_01</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_welcome</background>
@@ -277,6 +285,10 @@
     <object>objects\obj_garden_sheep</object>
     <object>objects\obj_test_shop_setup</object>
     <object>objects\obj_test_shop_sheep</object>
+    <objects name="Garden">
+      <object>objects\obj_Barn</object>
+      <object>objects\obj_Bush</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_main_menu</room>
