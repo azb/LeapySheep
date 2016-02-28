@@ -163,9 +163,12 @@ if nf.y &lt; y y++
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room = rm_lose
+            <string>if z = 0
+{
+room = rm_lose
 audio_stop_all()
 audio_play_sound(snd_baa006,0,0)
+}
 </string>
           </argument>
         </arguments>
@@ -276,7 +279,7 @@ if mouse_check_button_pressed(1)
         }*/
     time_since_last_click = 0
     }
-    
+
 if mouse_check_button(1)
     {
     held_time++
@@ -327,7 +330,10 @@ if z &gt; 0 + (jetpack_on * 96)
     {
     speed = 25
     direction = image_angle
-    zspeed -= 7
+    if sprite_index = spr_bunny
+    zspeed -= 4
+    else
+    zspeed -= 7    
     }
 else
     {
@@ -339,6 +345,14 @@ else
 moving = 0
 
 move_spd = 16
+
+if sprite_index = spr_bunny
+move_spd = 25
+
+if sprite_index = spr_turtle
+move_spd = 8
+
+
 if global.js &gt; 0
     {
     ok = 1
@@ -353,8 +367,8 @@ if global.js &gt; 0
     if point_distance(0,0,joystick_xpos(1),joystick_ypos(1)) &gt; .3
     if ok if !jetpack_on
         {
-        x += joystick_xpos(1) * move_spd
-        y += joystick_ypos(1) * move_spd
+        x += joystick_xpos(1) * (move_spd + (sprite_index == spr_bunny) * 20)
+        y += joystick_ypos(1) * (move_spd + (sprite_index == spr_bunny) * 20)
         moving = 1
         image_angle = point_direction(0,0,joystick_xpos(1),joystick_ypos(1))
         }

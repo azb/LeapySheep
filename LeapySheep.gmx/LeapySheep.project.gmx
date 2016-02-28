@@ -80,6 +80,7 @@
       <sprite>sprites\MELT_spr_settings_icons</sprite>
     </sprites>
     <sprite>sprites\spr_alien</sprite>
+    <sprite>sprites\spr_new_sheep</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_welcome</background>
@@ -273,11 +274,11 @@
     <object>objects\obj_test_garden_setup</object>
     <object>objects\obj_rocket_exaugst</object>
     <object>objects\obj_test_garden_sheep</object>
+    <object>objects\obj_garden_sheep</object>
     <object>objects\obj_test_shop_setup</object>
     <object>objects\obj_test_shop_sheep</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_init</room>
     <room>rooms\rm_main_menu</room>
     <room>rooms\rm_skin_select_temp</room>
     <room>rooms\rm_game</room>
@@ -285,6 +286,7 @@
     <room>rooms\rm_sheep_garden</room>
     <room>rooms\rm_sheep_shop</room>
     <room>rooms\rm_main</room>
+    <room>rooms\rm_init</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

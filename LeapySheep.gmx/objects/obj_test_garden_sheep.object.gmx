@@ -38,7 +38,7 @@ image_angle = face_direction
 time_before_move = MOVE_INCREMENT
 time_of_move = MOVE_DURATION
 
-sheep_id = string(instance_count)
+sheep_id = string(instance_number(obj_test_garden_sheep)) //instance_count
 </string>
           </argument>
         </arguments>

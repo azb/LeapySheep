@@ -19,9 +19,9 @@
     <option_android_arch_mipsr2>false</option_android_arch_mipsr2>
     <option_android_arch_mipsr2sf>false</option_android_arch_mipsr2sf>
     <option_android_arch_x86>True</option_android_arch_x86>
-    <option_android_build_version>0</option_android_build_version>
+    <option_android_build_version>6</option_android_build_version>
     <option_android_color_depth>0</option_android_color_depth>
-    <option_android_display_name>JuicyCraftEngine</option_android_display_name>
+    <option_android_display_name>Leapy Sheep</option_android_display_name>
     <option_android_flurry_enable>0</option_android_flurry_enable>
     <option_android_flurry_id></option_android_flurry_id>
     <option_android_google_analytics_enable>0</option_android_google_analytics_enable>
@@ -325,7 +325,7 @@
     <option_use_new_audio>True</option_use_new_audio>
     <option_variableerrors>False</option_variableerrors>
     <option_version>101</option_version>
-    <option_version_build>1</option_version_build>
+    <option_version_build>2</option_version_build>
     <option_version_company></option_version_company>
     <option_version_copyright></option_version_copyright>
     <option_version_description></option_version_description>

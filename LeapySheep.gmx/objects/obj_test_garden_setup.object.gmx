@@ -33,8 +33,8 @@ for (i=0;i&lt;10;i++) {
     global.sheep[i].sheep_id = i + 1
 }
 
-view_enabled = true
-view_visible[0] = true
+//view_enabled = true
+//view_visible[0] = true
 if instance_exists(obj_test_garden_sheep) {
     //view_object[0] = global.sheep[0]
     obj_garden_control.view_target = global.sheep[0]
