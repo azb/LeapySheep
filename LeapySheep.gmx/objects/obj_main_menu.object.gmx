@@ -33,10 +33,12 @@ page = 0
 
 
 global.skins = 0
+
 scr_add_skin( spr_new_sheep , "Surfy Sheep" )
 scr_add_skin( spr_leapy_sheep_old , "Leapy Sheep" )
 scr_add_skin( spr_turtle , "Leapy Turtle" )
 scr_add_skin( spr_bunny , "Leapy Bunny" )
+
 //scr_add_skin( spr_leapysheep , "Leapy Sheep Programmer Art" )
 //scr_add_skin( spr_leapy_sheep_dark , "Leapy Sheep Night Programmer Art" )
 
