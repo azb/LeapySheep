@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>global.highest_score = 0
 global.skin_selected = 0
-ads_enable(0,0,0)
+//ads_enable(0,0,0)
 
 page = 0
 
