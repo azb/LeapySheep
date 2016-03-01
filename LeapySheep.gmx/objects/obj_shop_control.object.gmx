@@ -29,7 +29,7 @@
 
 SHEEP_MAX = 10
 SHEEP_MIN = 1
-sheep_count = 1
+sheep_selected = 1
 
 // Drag control variable
 touch_point_x = 0
@@ -85,30 +85,30 @@ if mouse_y &gt;= swipe_window_y1 and mouse_y &lt;= swipe_window_y2 {
                     swipe_direction = 1
                     if instance_exists(obj_test_shop_setup) {
                         if instance_nearest(swipe_window_center_x,swipe_window_y,obj_test_shop_sheep) {
-                            sheep_count = global.sheep[sheep_count].sheep_id
-                            global.sheep[sheep_count].x = swipe_window_center_x
-                            global.sheep[sheep_count].y = swipe_window_center_y
+                            sheep_selected = global.sheep[sheep_selected].sheep_id
+                            global.sheep[sheep_selected].x = swipe_window_center_x
+                            global.sheep[sheep_selected].y = swipe_window_center_y
                         }
                     }
                     if instance_exists(obj_test_garden_setup) {
-                        sheep_count = sheep_count + swipe_direction
-                        if sheep_count &gt; SHEEP_MAX {
-                            sheep_count = SHEEP_MIN
+                        sheep_selected = sheep_selected + swipe_direction
+                        if sheep_selected &gt; SHEEP_MAX {
+                            sheep_selected = SHEEP_MIN
                         }
-                        view_object[0] = global.sheep[sheep_count-1]
+                        view_object[0] = global.sheep[sheep_selected-1]
                     }
                 }
                 else if mouse_x &lt; touch_point_x - 64 {
                     swipe_direction = -1
-                    sheep_count = sheep_count + swipe_direction
-                    if sheep_count &lt; SHEEP_MIN {
-                        sheep_count = SHEEP_MAX
+                    sheep_selected = sheep_selected + swipe_direction
+                    if sheep_selected &lt; SHEEP_MIN {
+                        sheep_selected = SHEEP_MAX
                     }
                     if instance_exists(obj_test_shop_setup) {
                         
                     }
                     else if instance_exists(obj_test_garden_setup) {
-                        view_object[0] = global.sheep[sheep_count-1]
+                        view_object[0] = global.sheep[sheep_selected-1]
                     }
                 }
             }
@@ -128,7 +128,7 @@ if mouse_y &gt;= swipe_window_y1 and mouse_y &lt;= swipe_window_y2 {
                 is_swiping = 1
             }
             if is_swiping {
-                global.sheep[sheep_count].x = global.sheep[sheep_count].x + (mouse_x + touch_point_x)
+                global.sheep[sheep_selected].x = global.sheep[sheep_selected].x + (mouse_x + touch_point_x)
             }
             else if !is_swiping {
                 swipe_trigger_time--
@@ -170,7 +170,7 @@ swipe_window_center_y = (swipe_window_y2 - swipe_window_y1) /2 + swipe_window_y1
     swipe_window_x2, swipe_window_y2, c_red,c_red,c_red,c_red,1)
 
 draw_text( swipe_window_center_x,swipe_window_center_y,
-    "Sheep No: " + string(sheep_count)
+    "Sheep No: " + string(sheep_selected)
     )
     
 if is_swiping {
