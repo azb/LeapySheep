@@ -306,9 +306,9 @@
   <rooms name="rooms">
     <room>rooms\rm_main_menu</room>
     <room>rooms\rm_skin_select_temp</room>
+    <room>rooms\rm_sheep_garden</room>
     <room>rooms\rm_game</room>
     <room>rooms\rm_lose</room>
-    <room>rooms\rm_sheep_garden</room>
     <room>rooms\rm_sheep_shop</room>
     <room>rooms\rm_main</room>
     <room>rooms\rm_init</room>
