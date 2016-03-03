@@ -25,29 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//
+            <string>global.sheep_skins[] = obj_test_garden_sheep.SHEEP_MAX
 
 
-for (i=0;i&lt;obj_garden_control.SHEEP_MAX;i++) {
-    global.sheep[i] = instance_create(i * 256,random(500) + 150,obj_test_garden_sheep) //50 + random(room_width - 100), 50 + random(room_height - 100)
-    global.sheep[i].sheep_id = i + 1
-   
-}
-
-
-//view_enabled = true
-//view_visible[0] = true
-if instance_exists(obj_test_garden_sheep) {
-    //view_object[0] = global.sheep[0]
-    obj_garden_control.view_target = global.sheep[0]
-}
-
-obj_garden_control.SHEEP_MAX = instance_number(obj_test_garden_sheep)
-
-for(j = 0; j &lt; 8; j++)
-{
-    instance_create(j * 256, 1950, obj_fence)
-} 
 </string>
           </argument>
         </arguments>

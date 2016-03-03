@@ -87,6 +87,10 @@ if page = 0
         page = 1
         }
     }
+    if MELT_button(spr_button, 192 , 704 + 180 * 3, 696, 160, 'View your Garden', -1, 0, '')
+    {
+        room = rm_sheep_garden
+    }
 
 if page = 1
     {

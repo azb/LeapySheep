@@ -166,7 +166,8 @@ view_yview[0] = (view_target_y + view_yview[0] ) / 2
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_rectangle_colour(swipe_window_x1, swipe_window_y1,
+            <string>/**
+draw_rectangle_colour(swipe_window_x1, swipe_window_y1,
     swipe_window_x2, swipe_window_y2, c_red,c_red,c_red,c_red,1)
 
 draw_text( swipe_window_center_x,swipe_window_center_y,
@@ -178,6 +179,7 @@ if is_swiping {
 }
 
 // debugging
+
 draw_text( mouse_x, mouse_y, 
     "Touch Point: " + string(touch_point_x) + " " + string(touch_point_y) + 
     "#Is Touching: " + string(is_touching) + 
@@ -187,7 +189,9 @@ draw_text( mouse_x, mouse_y,
     "#Sheep MIN: " + string(SHEEP_MIN) +
     "#Sheep Max: " + string(SHEEP_MAX) +
     "#Sheep Array Length: " + string(array_length_1d(global.sheep))
+
 )
+
 
 </string>
           </argument>

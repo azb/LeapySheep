@@ -275,10 +275,7 @@
       <object>objects\ctr_game</object>
     </objects>
     <object>objects\shared_Tweener</object>
-    <object>objects\obj_tree</object>
-    <object>objects\obj_ufo</object>
     <object>objects\obj_main_menu</object>
-    <object>objects\obj_flower</object>
     <object>objects\obj_hud</object>
     <object>objects\obj_skin_select</object>
     <object>objects\obj_lose</object>
@@ -288,19 +285,29 @@
       <object>objects\MELT_obj_menu</object>
       <object>objects\MELT_control</object>
     </objects>
-    <object>objects\obj_garden_control</object>
     <object>objects\obj_fence</object>
-    <object>objects\obj_shop_control</object>
-    <object>objects\obj_alien</object>
-    <object>objects\obj_test_garden_setup</object>
-    <object>objects\obj_rocket_exaugst</object>
-    <object>objects\obj_test_garden_sheep</object>
     <object>objects\obj_garden_sheep</object>
-    <object>objects\obj_test_shop_setup</object>
-    <object>objects\obj_test_shop_sheep</object>
     <objects name="Environment">
       <object>objects\obj_Barn</object>
       <object>objects\obj_Bush</object>
+      <object>objects\obj_flower</object>
+      <object>objects\obj_tree</object>
+    </objects>
+    <objects name="Stuff Saajan Is Working on">
+      <object>objects\obj_test_skin</object>
+      <object>objects\obj_test_garden_setup</object>
+      <object>objects\obj_test_garden_sheep</object>
+      <object>objects\obj_garden_control</object>
+    </objects>
+    <objects name="Shop">
+      <object>objects\obj_test_shop_setup</object>
+      <object>objects\obj_shop_control</object>
+      <object>objects\obj_test_shop_sheep</object>
+    </objects>
+    <objects name="EnemyAI">
+      <object>objects\obj_rocket_exaugst</object>
+      <object>objects\obj_alien</object>
+      <object>objects\obj_ufo</object>
     </objects>
   </objects>
   <rooms name="rooms">

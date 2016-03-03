@@ -70,13 +70,30 @@ if point_distance(x,y,mouse_x,mouse_y) &lt; 128
 if (x &gt; room_width)
 {
     direction = direction + 180
-    x = room_width - 1
+    face_direction = direction
+    x = (room_width) - 1
 }
 if (x &lt; 0)
 {
     direction = direction + 180
+    face_direction = direction
     x = 1
 }
+
+if (y &gt; room_height)
+{
+    y = room_height - 1
+    direction = direction + 180
+    face_direction = direction
+}
+
+if (y &lt; 0)
+{
+    y = 1
+    direction = direction + 180
+    face_direction = direction
+}
+
 if time_before_move &gt; 0 {
     time_before_move--
     time_of_move = MOVE_DURATION
@@ -158,6 +175,10 @@ else
     image_speed = 0
 }
 draw_text(x,y,sheep_id)
+//draw_text(x, y + 50, x)
+//draw_text(x + 15, y + 50, y)
+draw_text_transformed(x, y + 50, x, .5, .5, 0)
+draw_text_transformed(x, y + 100, y, .5, .5, 0)
 
 if view_object[0] == id {
     draw_circle(x,y,8,1)
