@@ -163,10 +163,16 @@ if nf.y &lt; y y++
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>if z &gt; 0
+{
+room = rm_game
+}
+else
+{
 room = rm_lose
 audio_stop_all()
 audio_play_sound(snd_baa006,0,0)
+}
 
 </string>
           </argument>

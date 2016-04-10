@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -76,6 +76,7 @@ numberOfFences = 0
           <argument>
             <kind>1</kind>
             <string>depth = -y
+if room = rm_game
 if y &gt; view_yview[0] + view_hview[0] + 128
     {
     y = view_yview[0]-128

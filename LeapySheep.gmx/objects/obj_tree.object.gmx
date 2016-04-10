@@ -74,7 +74,7 @@ image_speed = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>depth = -y
+            <string>depth = -y - 128
 
 if y &gt; view_yview[0] + view_hview[0] //room_height + 128
     {
