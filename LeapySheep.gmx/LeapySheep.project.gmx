@@ -102,6 +102,7 @@
       <sprite>sprites\spr_Sheep01_SW</sprite>
       <sprite>sprites\spr_Sheep01_W</sprite>
     </sprites>
+    <sprite>sprites\spr_boss_0</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_welcome</background>
@@ -308,6 +309,7 @@
       <object>objects\obj_rocket_exaugst</object>
       <object>objects\obj_alien</object>
       <object>objects\obj_ufo</object>
+      <object>objects\obj_Boss</object>
     </objects>
   </objects>
   <rooms name="rooms">
@@ -316,9 +318,11 @@
     <room>rooms\rm_sheep_garden</room>
     <room>rooms\rm_game</room>
     <room>rooms\rm_lose</room>
+    <room>rooms\rm_Boss_Room</room>
     <room>rooms\rm_sheep_shop</room>
     <room>rooms\rm_main</room>
     <room>rooms\rm_init</room>
+    <room>rooms\room8</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

@@ -146,6 +146,33 @@ if nf.y &lt; y y++
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="obj_Boss">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+room = rm_lose
+audio_stop_all()
+audio_play_sound(snd_baa006,0,0)
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="obj_ufo">
       <action>
         <libid>1</libid>

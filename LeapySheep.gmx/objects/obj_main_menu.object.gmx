@@ -71,7 +71,7 @@ global.skin_selected = 0
 draw_set_font(fnt_losescreen)
 
 if page = 0
-{
+    {
     if MELT_button(spr_button, 192 , 704 , 696,160,'Play', -1 , 0 , '')
         {
         room = rm_game
@@ -86,13 +86,15 @@ if page = 0
         {
         page = 1
         }
-
+    }
     if MELT_button(spr_button, 192 , 704 + 180 * 3, 696, 160, 'View your Garden', -1, 0, '')
     {
         room = rm_sheep_garden
     }
-
-}
+      if MELT_button(spr_button, 192 , 704 + 180 * 4, 696, 160, 'Boss Battle', -1, 0, '')
+    {
+        room = rm_Boss_Room
+    }
 
 if page = 1
     {
@@ -102,7 +104,6 @@ if page = 1
         page = 0
         }
     }
-
 
 draw_sprite_stretched(global.skin[global.skin_selected],0,544-528/2,150,528,576)
 
