@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -51,7 +51,7 @@ else
         }
     }
 image_speed = 0
-
+numberOfFences = 0
 //vspeed = 16
 </string>
           </argument>
@@ -79,7 +79,12 @@ image_speed = 0
 if y &gt; view_yview[0] + view_hview[0] + 128
     {
     y = view_yview[0]-128
+    numberOfFences++
     }
+if (numberOfFences &gt;= 5)
+{
+    room = rm_Boss_Room
+}
     
 /*
 if y &gt; view_yview[0] + view_hview[0] //room_height + 128

@@ -63,6 +63,7 @@
     <instance objName="obj_fence" x="960" y="800" name="inst_78FC0679" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Boss" x="480" y="128" name="inst_583908BF" locked="0" code="" scaleX="9.29032230377197" scaleY="10.290322303772" colour="4294967295" rotation="0"/>
     <instance objName="obj_leapysheep" x="352" y="448" name="inst_350D9F81" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ctr_init" x="-1152" y="-480" name="inst_2DCF740C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
