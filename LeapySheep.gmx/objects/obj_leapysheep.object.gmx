@@ -93,19 +93,19 @@ if global.js &gt; 0
 //score++
 if keyboard_check(vk_up)
     {
-    y-=32
+    y-=32 image_angle = 90
     }
 if keyboard_check(vk_down)
     {
-    y+=32
+    y+=32 image_angle = -90
     }
 if keyboard_check(vk_left)
     {
-    x-=32
+    x-=32 image_angle = 180
     }
 if keyboard_check(vk_right)
     {
-    x+=32
+    x+=32 image_angle = 0
     }
 /*
 if mouse_check_button(1)
@@ -315,7 +315,7 @@ if mouse_check_button(1)
 //JUMP
 if mouse_y &gt; view_yview[0] + 96
 if speed = 0
-if mouse_check_button_released(1)
+if mouse_check_button_released(1) || keyboard_check_pressed(vk_space)
     {
     taps++
     jx_start = -1

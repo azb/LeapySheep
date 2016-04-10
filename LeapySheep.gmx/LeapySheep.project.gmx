@@ -313,6 +313,7 @@
     </objects>
     <object>objects\obj_Boss_Room_setup</object>
   </objects>
+  <timelines name="timelines"/>
   <rooms name="rooms">
     <room>rooms\rm_main_menu</room>
     <room>rooms\rm_skin_select_temp</room>
