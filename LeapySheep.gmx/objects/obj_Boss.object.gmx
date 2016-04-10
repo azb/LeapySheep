@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>MOVE_SPEED = 10
+            <string>MOVE_SPEED = 15
 BOSS_COUNTDOWN = 5
 MOVE_DURATION = 8 + floor(random(50))
 MOVE_INCREMENT = 100 + floor(random(50))
@@ -60,6 +60,57 @@ time_of_move = MOVE_DURATION
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>301</id>
+        <kind>0</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_set_alarm</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>150</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>BOSS_COUNTDOWN -= 1
+if(BOSS_COUNTDOWN == 0)
+{
+
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -83,7 +134,7 @@ time_of_move = MOVE_DURATION
 }
 else {
     if time_of_move == MOVE_DURATION {
-        face_direction = random(360)
+        face_direction = point_direction(x,y,obj_leapysheep.x,obj_leapysheep.y)
         direction = face_direction 
         image_angle = face_direction
         speed = MOVE_SPEED
@@ -122,6 +173,7 @@ else {
             <kind>1</kind>
             <string>draw_self()
 
+/*
 x1 = 50 
 y1 =  50
 if collision_line(x,y,x1,y1,obj_leapysheep,1,1)
@@ -131,7 +183,7 @@ if !collision_circle(obj_leapysheep.x,obj_leapysheep.y,64,obj_tree,1,1)
     speed = 32
     alarm[0] = 200
     }
-
+*/
     
     
 </string>
