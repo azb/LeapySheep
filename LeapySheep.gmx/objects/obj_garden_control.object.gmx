@@ -169,12 +169,11 @@ view_yview[0] = (view_target_y + view_yview[0] ) / 2
             <kind>1</kind>
             <string>
 
-
-
-draw_rectangle(view_xview[0], view_yview[0], view_xview[0] + view_wview[0],view_yview[0] + view_hview[0], false)
-
 transparency = (sin(date_get_day(date_current_datetime())) + 1) / 2;
 draw_set_alpha(transparency)
+draw_rectangle(view_xview[0], view_yview[0], view_xview[0] + view_wview[0],view_yview[0] + view_hview[0], false)
+
+draw_set_alpha(1)
 
 
 
