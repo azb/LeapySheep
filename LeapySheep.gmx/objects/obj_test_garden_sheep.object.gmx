@@ -39,6 +39,8 @@ time_before_move = MOVE_INCREMENT
 time_of_move = MOVE_DURATION
 
 sheep_id = string(instance_count)
+
+
 </string>
           </argument>
         </arguments>
@@ -80,6 +82,8 @@ if (x &lt; 0)
     x = 1
 }
 
+
+
 if (y &gt; room_height)
 {
     y = room_height - 1
@@ -98,22 +102,27 @@ if time_before_move &gt; 0 {
     time_before_move--
     time_of_move = MOVE_DURATION
 }
+
 else {
-    if time_of_move == MOVE_DURATION {
+    if time_of_move == MOVE_DURATION 
+    {
         face_direction = random(360)
         direction = face_direction 
         image_angle = face_direction
         speed = MOVE_SPEED
         
     }
-    if time_of_move &gt; 0 {
+    if time_of_move &gt; 0 
+    {
         time_of_move--
     }
-    else if time_of_move &lt;= 0 {
+    else if time_of_move &lt;= 0 
+    {
         time_before_move = MOVE_INCREMENT
         speed = 0
     }
 }
+
 
 
 </string>
@@ -138,8 +147,14 @@ else {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (point_distance(other.x, other.y, x, y) &lt; 128)
-move_outside_all(point_direction(other.x, other.y, x, y), 1)
+            <string>
+if (point_distance(other.x, other.y, x, y) &lt; 128)
+{
+    move_outside_all(point_direction(other.x, other.y, x, y), 1)
+    image_angle = image_angle + 90;
+    speed = MOVE_SPEED 
+}
+
 
 </string>
           </argument>
@@ -183,6 +198,8 @@ draw_text_transformed(x, y + 100, y, .5, .5, 0)
 if view_object[0] == id {
     draw_circle(x,y,8,1)
 }
+
+
 </string>
           </argument>
         </arguments>
