@@ -7,3 +7,5 @@ for(i=0 ; i < global.mice ; i++)
     global.mx[i] = device_mouse_x(i)
     global.my[i] = device_mouse_y(i)
     }
+    
+

@@ -102,7 +102,9 @@
       <sprite>sprites\spr_Sheep01_SW</sprite>
       <sprite>sprites\spr_Sheep01_W</sprite>
     </sprites>
+    <sprite>sprites\spr_crater</sprite>
     <sprite>sprites\spr_boss_0</sprite>
+    <sprite>sprites\spr_laser</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_welcome</background>
@@ -260,6 +262,7 @@
     <script>scripts\view_follow.gml</script>
     <script>scripts\scr_game_end.gml</script>
     <script>scripts\scr_add_skin.gml</script>
+    <script>scripts\status_bar.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_default</font>
@@ -279,6 +282,7 @@
     <object>objects\obj_main_menu</object>
     <object>objects\obj_hud</object>
     <object>objects\obj_skin_select</object>
+    <object>objects\obj_crater</object>
     <object>objects\obj_lose</object>
     <object>objects\obj_leapysheep</object>
     <objects name="MELT OBJECTS">
@@ -309,6 +313,7 @@
       <object>objects\obj_rocket_exaugst</object>
       <object>objects\obj_alien</object>
       <object>objects\obj_ufo</object>
+      <object>objects\obj_laser</object>
       <object>objects\obj_Boss</object>
     </objects>
     <object>objects\obj_Boss_Room_setup</object>

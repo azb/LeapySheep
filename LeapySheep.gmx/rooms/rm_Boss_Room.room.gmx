@@ -16,7 +16,7 @@
   <clearDisplayBuffer>-1</clearDisplayBuffer>
   <makerSettings>
     <isSet>-1</isSet>
-    <w>1932</w>
+    <w>1936</w>
     <h>1056</h>
     <showGrid>0</showGrid>
     <showObjects>-1</showObjects>
@@ -26,9 +26,9 @@
     <showViews>0</showViews>
     <deleteUnderlyingObj>0</deleteUnderlyingObj>
     <deleteUnderlyingTiles>-1</deleteUnderlyingTiles>
-    <page>1</page>
-    <xoffset>-389</xoffset>
-    <yoffset>-237</yoffset>
+    <page>0</page>
+    <xoffset>-263</xoffset>
+    <yoffset>-426</yoffset>
   </makerSettings>
   <backgrounds>
     <background visible="-1" foreground="0" name="back_ground" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -61,8 +61,16 @@
     <instance objName="obj_fence" x="192" y="800" name="inst_A4012B23" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_fence" x="-64" y="800" name="inst_3D32029B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_fence" x="960" y="800" name="inst_78FC0679" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Boss" x="480" y="128" name="inst_583908BF" locked="0" code="" scaleX="9.29032230377197" scaleY="10.290322303772" colour="4294967295" rotation="0"/>
-    <instance objName="obj_leapysheep" x="352" y="448" name="inst_350D9F81" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_leapysheep" x="1056" y="1472" name="inst_350D9F81" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_tree" x="384" y="1376" name="inst_33189913" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_tree" x="1472" y="1024" name="inst_D0E258E8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_tree" x="1696" y="128" name="inst_48AD0F46" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_tree" x="224" y="416" name="inst_6C8A27C5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_tree" x="1792" y="1600" name="inst_E7AAD150" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Boss" x="832" y="352" name="inst_3ADDB65A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Boss" x="1632" y="544" name="inst_62DF727E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Boss" x="160" y="1760" name="inst_FEB2DEFB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Boss" x="1824" y="2080" name="inst_268E5523" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

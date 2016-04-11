@@ -31,7 +31,6 @@ for(i=0 ; i < global.mice ; i++)
         if global.mreleased[jdown[argument3]]
             {
             jdown[argument3] = -1
-            //show_message("We are all good down here Huston")
             }
         
         break;

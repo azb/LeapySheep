@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_create(0,0,obj_hud)
+            <string>global.mice = 5
+
+instance_create(0,0,obj_hud)
 //sprite_index = global.skin
 
 scr_touch_controls_init()
@@ -79,11 +81,13 @@ sprite_index = global.skin[global.skin_selected]
 else
     m = -1
 
-
 scr_game_end()
 
+if room != rm_Boss_Room
+{
 if x &gt; room_width x = room_width
 if x &lt; 0 x = 0
+}
 
 if global.js &gt; 0
     {
@@ -110,7 +114,6 @@ if keyboard_check(vk_right)
 /*
 if mouse_check_button(1)
     {
-    
     if mouse_x &lt; room_width/2
         {
         if x &gt; 64
@@ -123,7 +126,7 @@ if mouse_check_button(1)
         }
     }
 */
-
+    
 
 //if x &lt; 16 x  = 16
 //if x &gt; room_width - 16 x  = room_width - 16
@@ -131,6 +134,13 @@ if mouse_check_button(1)
 depth = -y
 
 view_follow()
+
+if room = rm_Boss_Room
+    {
+    view_wview[0] = 1080 * 2 //adjust(view_wview[0] , min(1080 * 2 , max(point_distance(x,y,obj_Boss.x,obj_Boss.y) * 2 , 1080)))
+    view_hview[0] = view_wview[0] * (1920/1080)
+    }
+
 /*
 repeat(64)
 if collision_circle(x,y,sprite_width/2,obj_fence,0,1)
@@ -167,7 +177,7 @@ if nf.y &lt; y y++
 {
 room = rm_game
 }
-else
+else if other.vit &gt; 0
 {
 room = rm_lose
 audio_stop_all()
@@ -281,7 +291,8 @@ audio_play_sound(snd_eat_plant,0,0)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>//draw_set_color(c_purple)
+//draw_circle(x,y,96,0)
 draw_sprite_ext(sprite_index,-1,x,y+15,1,m,image_angle,c_black,.4)
 //draw_sprite_ext(spr_rocket_pack,jetpack_on+1,x,y+15,1,1,image_angle,c_black,.4)
 
@@ -293,6 +304,19 @@ draw_sprite_ext(sprite_index,-1,x,y-z,1,m,image_angle,c_white,1)
 
 scr_mouse_device_handling()
 
+for(i=0 ; i&lt;global.mice ; i++)
+    {
+    if global.mx[i] &lt; view_xview[0]+view_wview[0]/2
+        {
+        if global.mpressed[i]
+            {
+            if z = 0
+            zspeed = 25
+            }
+        }
+    }
+
+    
 //joystick_radius = 128
 
 time_since_last_click++
@@ -329,7 +353,7 @@ if mouse_check_button_released(1) || keyboard_check_pressed(vk_space)
         {
         //motion_add(image_angle , 60)
         //friction = 5
-        zspeed = 25
+        //zspeed = 25
         audio_play_sound(snd_jump,0,0)
         }
     }
@@ -431,6 +455,7 @@ if jx_start != -1
             }
         }
     }
+
 if moving
     {
     image_speed = .3
@@ -441,6 +466,14 @@ else
     image_index = 0
     }
 
+/*
+for(i=0 ; i&lt;global.mice ; i++)
+    {
+    draw_set_color(c_black)
+    draw_circle(global.mx[i],global.my[i],96,global.mdown[i])
+    }
+*/
+    
 </string>
           </argument>
         </arguments>
