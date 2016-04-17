@@ -65,7 +65,10 @@ global.skin_selected = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>draw_set_color(c_black)
+draw_set_halign(fa_left)
+draw_set_valign(fa_top)
+draw_text(8,8,"Version 2")
 //DRAW EVENT CODE
 //put this code in the draw event of your interface drawing object
 draw_set_font(fnt_losescreen)

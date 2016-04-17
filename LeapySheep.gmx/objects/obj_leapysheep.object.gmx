@@ -351,9 +351,9 @@ if mouse_check_button_released(1) || keyboard_check_pressed(vk_space)
     jx_start = -1
     if held_time &lt; 5
         {
-        //motion_add(image_angle , 60)
-        //friction = 5
-        //zspeed = 25
+        motion_add(image_angle , 60)
+        friction = 5
+        zspeed = 25
         audio_play_sound(snd_jump,0,0)
         }
     }

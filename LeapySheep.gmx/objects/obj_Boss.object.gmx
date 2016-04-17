@@ -25,7 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>MOVE_SPEED = 15
+            <string>tx = obj_leapysheep.x + irandom(320) - 160
+ty = obj_leapysheep.y + irandom(320) - 160
+            
+MOVE_SPEED = 15
 BOSS_COUNTDOWN = 5
 MOVE_DURATION = 8 + floor(random(50))
 MOVE_INCREMENT = 100 + floor(random(50))
@@ -67,7 +70,7 @@ speed = irandom(3) + 1
         <arguments>
           <argument>
             <kind>0</kind>
-            <string>irandom(25) + 100</string>
+            <string>irandom(100) + 100</string>
           </argument>
           <argument>
             <kind>4</kind>
@@ -104,7 +107,7 @@ if cooldown &gt; - 5
         {
         nl = instance_create(x,y,obj_laser)
         nl.direction = point_direction(x,y,obj_leapysheep.x,obj_leapysheep.y)
-        nl.speed = 40
+        nl.speed = 20
         nl.image_angle = nl.direction
         
         nl.tx = obj_leapysheep.x
